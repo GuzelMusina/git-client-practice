@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import HelloWorld from "./HelloWorld";
+import Auth from "./containers/Auth/Auth";
 import {createStore} from "redux";
 import reducer from "./reducers"
 const initialState = { tech: "React " };
@@ -7,7 +7,7 @@ const store = createStore(reducer, initialState);
 
 class App extends Component{
     render() {
-        return<HelloWorld tech={store.getState().tech}/>
+        return<Auth/>
     }
 }
 export default App;
