@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import classes from './Auth.css'
 import Button from "../../components/UI/Button/Button";
+import classes from './Auth.css'
+
 export default class Auth extends Component{
 
     loginHandler=()=>{
@@ -12,7 +13,7 @@ export default class Auth extends Component{
     }
     submitHandler=event=>{
         event.preventDefault();
-    }
+    };
 
 
     render(){
@@ -20,7 +21,7 @@ export default class Auth extends Component{
             <div className={classes.Auth}>
                 <div>
                     <h1>Authorization</h1>
-                    <form onSubmit={this.submitHandler}>
+                    <form onSubmit={this.submitHandler} className={classes.AuthForm}>
                         <input type="text"/>
                         <input type="text "/>
 
