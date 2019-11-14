@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 import './App.css';
 import Repositories from "./Repositories";
+import Profile from "./Profile";
 
 const GET_REPOSITORIES_OF_ORGANIZATION = gql`
   {
@@ -29,7 +30,8 @@ const App = () => (
                 return <div>Loading ...</div>;
             }
             return (
-                <Repositories repositories={organization.repositories}/>
+                <Profile/>
+                //<Repositories repositories={organization.repositories}/>
             );
         }}
     </Query>

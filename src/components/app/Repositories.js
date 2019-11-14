@@ -1,6 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 
+import Repo_Fragment from './Fragment'
 import RepositoryList from "./RepositoriesList";
 import './App.css';
 import './Select';
@@ -49,5 +50,5 @@ class Repositories extends React.Component {
     }
 }
 
-
+export {Repo_Fragment}
 export default Repositories;
