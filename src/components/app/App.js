@@ -25,6 +25,7 @@ const GET_REPOSITORIES_OF_ORGANIZATION = gql`
 const App = () => (
     //запрос
     <Query query={GET_REPOSITORIES_OF_ORGANIZATION}>
+
         {({data: {organization}, loading}) => {
             if (loading || !organization) {
                 return <div>Loading ...</div>;
