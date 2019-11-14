@@ -1,7 +1,10 @@
 import React from 'react'
-import { Query } from "react-apollo";
+import {Query} from "react-apollo";
 import gql from 'graphql-tag'
 import Repositories, {Repo_Fragment} from './Repositories'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 const user_repos = gql`
     {
@@ -27,17 +30,17 @@ const user_repos = gql`
 `
 
 class Profile extends React.Component {
-    componentDidMount(){
+    componentDidMount() {
         console.log("Profile");
     }
 
-    render(){
+    render() {
         return (
             <Query query={user_repos}
                    notifyOnNetworkStatusChange={true}>
-                {({ data, loading}) => {
+                {({data, loading}) => {
 
-                    const { viewer } = data;
+                    const {viewer} = data;
 
                     if (loading || !viewer) {
                         return <div>Loading ...</div>;
@@ -45,19 +48,29 @@ class Profile extends React.Component {
 
                     return (
                         <div className="container">
-                            <div className="row">
-                                <div className="col-md-3">
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={6}>
                                     <img className="img-fluid rounded" src={viewer.avatarUrl} alt={viewer.login}/>
-                                    <h2>{viewer.name}</h2>
-                                    <p className="lead">{viewer.login}</p>
-                                </div>
-                                <div className="col-md-9">
-                                    <h2>Repositories</h2>
-                                    <div className="row">
-                                        <Repositories repositories={viewer.repositories} />
-                                    </div>
-                                </div>
-                            </div>
+                                </Grid>
+                                <Grid container xs={12} sm={6}>
+                                    <Grid item>
+                                        <Typography variant="h2" component="h2" gutterBottom>
+                                            <h2>{viewer.name}</h2>
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant="h3" component="h2" gutterBottom>
+                                            <p className="lead">@{viewer.login}</p>
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <Typography variant="h2" component="h2" gutterBottom>
+                                        <h2>Repositories</h2>
+                                    </Typography>
+                                    <Repositories repositories={viewer.repositories}/>
+                                </Grid>
+                            </Grid>
                         </div>
                     );
                 }}

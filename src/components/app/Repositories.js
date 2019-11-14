@@ -3,11 +3,7 @@ import gql from 'graphql-tag';
 
 import Repo_Fragment from './Fragment'
 import RepositoryList from "./RepositoriesList";
-import './App.css';
-import './Select';
-import './Star';
-import './App.css';
-import Select from "./Select";
+
 
 const GET_REPOSITORIES_OF_ORGANIZATION = gql`
   {
@@ -25,10 +21,14 @@ const GET_REPOSITORIES_OF_ORGANIZATION = gql`
     }
   }
 `;
+
+
 class Repositories extends React.Component {
+
     state = {
         selectedRepositoryIds: [],
     };
+
 
     toggleSelectRepository = (id, isSelected) => {
         let {selectedRepositoryIds} = this.state;
@@ -39,6 +39,8 @@ class Repositories extends React.Component {
 
         this.setState({selectedRepositoryIds});
     };
+
+
     render() {
         return (
             <RepositoryList
@@ -49,6 +51,7 @@ class Repositories extends React.Component {
         );
     }
 }
+
 
 export {Repo_Fragment}
 export default Repositories;
