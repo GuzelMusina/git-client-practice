@@ -2,6 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 
+import Auth from "./Auth";
 import Profile from "./Profile";
 import Grid from "@material-ui/core/Grid";
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -49,21 +50,22 @@ const App = () => (
             return (
                 <Router>
                     <ul>
+                        {/*<li>*/}
+                        {/*    <Link to="/profile">Profile</Link>*/}
+                        {/*</li>*/}
                         <li>
-                            <Link to="/profile">Profile</Link>
-                        </li>
-                        <li>
-                            <Link to="/">Main Page</Link>
+                            <Link to="/auth">Authorize</Link>
                         </li>
                         <li>
                             <Link to="/contacts">Contacts</Link>
                         </li>
                     </ul>
                     <Switch>
-                        <Route path="/profile">
-                            <Profile/>
-                        </Route>
-                        <Route path="/">
+                        {/*<Route path="/profile">*/}
+                        {/*    <Profile/>*/}
+                        {/*</Route>*/}
+                        <Route path="/auth">
+                            <Auth/>
                         </Route>
                         <Route path="/contacts">
                         </Route>
