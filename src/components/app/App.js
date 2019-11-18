@@ -1,11 +1,20 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
-import './App.css';
+
 import Profile from "./Profile";
 import Grid from "@material-ui/core/Grid";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    useHistory,
+    useLocation
+} from "react-router-dom";
 const GET_REPOSITORIES_OF_ORGANIZATION = gql`
   {
     organization(login: "the-road-to-learn-react") {
@@ -38,7 +47,28 @@ const App = () => (
                 </div>;
             }
             return (
-                <Profile/>
+                <Router>
+                    <ul>
+                        <li>
+                            <Link to="/profile">Profile</Link>
+                        </li>
+                        <li>
+                            <Link to="/">Main Page</Link>
+                        </li>
+                        <li>
+                            <Link to="/contacts">Contacts</Link>
+                        </li>
+                    </ul>
+                    <Switch>
+                        <Route path="/profile">
+                            <Profile/>
+                        </Route>
+                        <Route path="/">
+                        </Route>
+                        <Route path="/contacts">
+                        </Route>
+                    </Switch>
+                </Router>
                 //<Repositories repositories={organization.repositories}/>
             );
         }}

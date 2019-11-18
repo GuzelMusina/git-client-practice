@@ -3,7 +3,6 @@ import {Query} from "react-apollo";
 import gql from 'graphql-tag'
 import Repositories, {Repo_Fragment} from './Repositories'
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import UserAvatar from "./Avatar";
 import styled from 'styled-components'
