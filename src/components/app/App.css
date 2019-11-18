@@ -2,10 +2,10 @@
   padding: 5px;
 }
 .row_selected {
-  background-color: orange;
+  background-color: darkgrey;
 }
 .row_selected:hover {
-  background-color: orange;
+  background-color: darkgrey;
 }
 .RepositoriesList Card{
   padding: 10px;

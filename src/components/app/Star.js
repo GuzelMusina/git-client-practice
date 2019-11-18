@@ -1,9 +1,11 @@
 import React from "react";
 import {Query, Mutation} from 'react-apollo';
 import gql from 'graphql-tag';
-import IconButton from '@material-ui/core/IconButton';
+import StarIcon from '@material-ui/icons/Star';
+import yellow from '@material-ui/core/colors/yellow';
 
 import Select from "./Select";
+import {createMuiTheme} from "@material-ui/core";
 
 const STAR_REPOSITORY = gql`
   mutation($id: ID!) {
@@ -15,14 +17,16 @@ const STAR_REPOSITORY = gql`
     }
   }
 `;
+
 const Star = ({id}) => (
 
     <Mutation mutation={STAR_REPOSITORY} variables={{id}}>
         {starRepository => (
-            <IconButton color="secondary" aria-label="add an alarm"
+
+            <StarIcon
                         onClick={starRepository}>
                 Star
-            </IconButton>
+            </StarIcon>
         )}
     </Mutation>
 );

@@ -40,7 +40,7 @@ const RepositoryList = ({
                             toggleSelectRepository={toggleSelectRepository}
                         />{' '}
                         {
-                            !node.viewerHasStarred && <Star id={node.id}/>
+                            node.viewerHasStarred ? "You have already stared this repo" :<Star id={node.id}/>
                         }
                     </CardActions>
                 </Card>

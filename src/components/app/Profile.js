@@ -3,8 +3,8 @@ import {Query} from "react-apollo";
 import gql from 'graphql-tag'
 import Repositories, {Repo_Fragment} from './Repositories'
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const user_repos = gql`
     {
@@ -43,7 +43,11 @@ class Profile extends React.Component {
                     const {viewer} = data;
 
                     if (loading || !viewer) {
-                        return <div>Loading ...</div>;
+                        return <div><Grid container
+                                          justify="center"
+                                          alignItems="flex-end">
+                            <CircularProgress color={"secondary"}></CircularProgress>
+                        </Grid></div>;
                     }
 
                     return (

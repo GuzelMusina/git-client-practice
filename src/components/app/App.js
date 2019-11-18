@@ -2,8 +2,9 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 import './App.css';
-import Repositories from "./Repositories";
 import Profile from "./Profile";
+import Grid from "@material-ui/core/Grid";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const GET_REPOSITORIES_OF_ORGANIZATION = gql`
   {
@@ -28,7 +29,13 @@ const App = () => (
 
         {({data: {organization}, loading}) => {
             if (loading || !organization) {
-                return <div>Loading ...</div>;
+                return <div>
+                    <Grid container
+                          justify="center"
+                          alignItems="flex-end">
+                    <CircularProgress color={"secondary"}></CircularProgress>
+                    </Grid>
+                </div>;
             }
             return (
                 <Profile/>
