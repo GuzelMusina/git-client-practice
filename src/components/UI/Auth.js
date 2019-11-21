@@ -8,7 +8,8 @@ import {
     useHistory,
     useLocation
 } from "react-router-dom";
-import Profile from "./Profile";
+import Profile from "../app/Profile";
+import Input from "./Input/Input";
 
 export default function Auth() {
     return (
@@ -102,7 +103,8 @@ function LoginPage() {
     return (
         <div>
             <p>You must log in to view the page at {from.pathname}</p>
-            <button onClick={login}>Log in</button>
+            <Input/>
+            <button onClick={login}>Log in</button>>
         </div>
     );
 }
