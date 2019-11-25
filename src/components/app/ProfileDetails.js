@@ -8,29 +8,20 @@ import UserAvatar from "./Avatar";
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 
-const user_repos = gql`
+const user_info = gql`
     {
         viewer {
             name
             login
-            repositories(
-                first: 20 orderBy: {
-                    direction: DESC,
-                    field: STARGAZERS
-                }
-            ) {
-                edges {
-                    node {
-                        ...repository
-                    }
-                }
-            }
+            bio
+            email
+            location
+            
         }
     }
-    ${Repo_Fragment}
 `
 
-class Profile extends React.Component {
+class ProfileDetails extends React.Component {
     componentDidMount() {
         console.log("Profile");
     }
@@ -38,12 +29,10 @@ class Profile extends React.Component {
     render() {
         return (
 
-            <Query query={user_repos}
+            <Query query={user_info}
                    notifyOnNetworkStatusChange={true}>
                 {({data, loading}) => {
-
                     const {viewer} = data;
-
                     if (loading || !viewer) {
                         return <div><Grid container
                                           justify="center"
@@ -54,23 +43,19 @@ class Profile extends React.Component {
 
                     return (
                         <ProfileSection>
-                            <UserAvatar/>
+                            <UserAvatar>{viewer.avatarUrl}</UserAvatar>
                             <NameSection>
-                                <Link to={"/fullInfoUser"}>
-                                <UsersFullName>{viewer.name}</UsersFullName></Link>
+                                <UsersFullName>{viewer.name}</UsersFullName>
                                 <UsersName>@{viewer.login}</UsersName>
                             </NameSection>
                             <BioContainer>
-
+                                {viewer.bio}
                             </BioContainer>
-
                             <ProfileDivider/>
-
+                            <Location>{viewer.location} </Location>
                             <Organisation>
-                                <Repositories repositories={viewer.repositories}/>
+                                {viewer.email}
                             </Organisation>
-
-
                         </ProfileSection>
                     );
                 }}
@@ -87,8 +72,9 @@ const NameSection = styled.div`
   padding: 16px 0;
 `
 
-
-
+const Location = styled.p`
+  font-size: 14px;
+`
 const ProfileDivider = styled.div`
   height: 1px;
   margin: 8px 1px;
@@ -123,4 +109,4 @@ const BioContainer = styled.div`
   font-size: 14px;
   color: #6a737d;
   `
-export default Profile
+export default ProfileDetails

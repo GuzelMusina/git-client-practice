@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-const Repo_Fragment = gql `
+const Repo_Fragment = gql`
   fragment repository on Repository {
     id
     name

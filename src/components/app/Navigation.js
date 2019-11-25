@@ -13,6 +13,7 @@ import {
     useHistory,
     useLocation
 } from "react-router-dom";
+import ProfileDetails from "./ProfileDetails";
 
 export default class Navigation extends Component {
     constructor(props) {
@@ -75,6 +76,12 @@ export default class Navigation extends Component {
                         <Auth/>
                     </Route>
                     <Route path="/contacts">
+                    </Route>
+                    <Route path="/description">
+                        <h2>описание</h2>
+                    </Route>
+                    <Route path="/fullInfoUser">
+                        <ProfileDetails/>
                     </Route>
                 </Switch>
             </Router>
