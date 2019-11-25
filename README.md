@@ -1,4 +1,4 @@
-##Github client application
+## Github client application
 Create a front application for github client on React with Github GraphQL API
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
