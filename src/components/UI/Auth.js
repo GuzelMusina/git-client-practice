@@ -8,9 +8,9 @@ import {
     useHistory,
     useLocation
 } from "react-router-dom";
-import Profile from "../app/Profile";
+import Profile from "../app/profile/Profile";
 import Input from "./Input/Input";
-import AuthFunc from "../app/AuthFunc";
+import AuthFunc from "../app/profile/AuthFunc";
 
 export default function Auth() {
     return (

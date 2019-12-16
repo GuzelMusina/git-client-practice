@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
-import Select from './Select';
-import Star from './Star';
+import Select from '../others/Select';
+import Star from '../others/Star';
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";

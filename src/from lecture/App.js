@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -24,6 +23,3 @@ function App() {
 }
 
 export default App;
-//yarn add gh-pages
-//git add ссылка
-//git remote home origin приконектили репозиторий в котором ничего нет

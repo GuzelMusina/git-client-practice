@@ -6,8 +6,10 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import './index.css'
 import 'typeface-roboto';
+import history from "./history";
+import { Router, Route, Link } from 'react-router-dom';
 
-import App from './components/app/App';
+import App from './components/app/main/App';
 
 import registerServiceWorker from './registerServiceWorker';
 

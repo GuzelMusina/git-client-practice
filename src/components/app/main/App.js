@@ -2,8 +2,6 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 
-import Auth from "./AuthFunc";
-import Profile from "./Profile";
 import Grid from "@material-ui/core/Grid";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Navigation from './Navigation'
@@ -37,16 +35,15 @@ const App = () => (
                     <Grid container
                           justify="center"
                           alignItems="flex-end">
-                    <CircularProgress color={"secondary"}></CircularProgress>
+                        <CircularProgress color={"secondary"}></CircularProgress>
                     </Grid>
                 </div>;
             }
             return (
-               <Navigation/>
+                <Navigation/>
                 //<Repositories repositories={organization.repositories}/>
             );
         }}
     </Query>
 );
-
 export default App;

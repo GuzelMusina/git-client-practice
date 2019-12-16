@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import gql from 'graphql-tag';
 import {Query} from 'react-apollo';
 
-import Auth from "./AuthFunc";
-import Profile from "./Profile";
+import Auth from "../profile/AuthFunc";
+import Profile from "../profile/Profile";
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,7 +13,8 @@ import {
     useHistory,
     useLocation
 } from "react-router-dom";
-import ProfileDetails from "./ProfileDetails";
+import ProfileDetails from "../profile/ProfileDetails";
+//import RepositoryDetails from "./RepositoryDetails";
 
 export default class Navigation extends Component {
     constructor(props) {
@@ -62,9 +63,6 @@ export default class Navigation extends Component {
                         <Link to="/auth">Authorize</Link>
                     </li>
                     <li>
-                        <Link to="/contacts">Contacts</Link>
-                    </li>
-                    <li>
                         <Link to="/profile">Profile</Link>
                     </li>
                 </ul>
@@ -75,10 +73,8 @@ export default class Navigation extends Component {
                     <Route path="/auth">
                         <Auth/>
                     </Route>
-                    <Route path="/contacts">
-                    </Route>
                     <Route path="/description">
-                        <h2>описание</h2>
+                        {/*<RepositoryDetails/>*/}
                     </Route>
                     <Route path="/fullInfoUser">
                         <ProfileDetails/>

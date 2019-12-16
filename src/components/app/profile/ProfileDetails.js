@@ -1,7 +1,7 @@
 import React from 'react'
 import {Query} from "react-apollo";
 import gql from 'graphql-tag'
-import Repositories, {Repo_Fragment} from './Repositories'
+import Repositories, {Repo_Fragment} from '../repositories/Repositories'
 import Grid from '@material-ui/core/Grid';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import UserAvatar from "./Avatar";
