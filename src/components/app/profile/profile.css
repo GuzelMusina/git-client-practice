@@ -1,0 +1,17 @@
+.round-img {
+    border-radius: 50%;
+    max-width: 200px;
+}
+
+.repositories {
+    margin-top: 20px;
+}
+
+.repository-name {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.follow-button {
+    margin: 10px;
+}

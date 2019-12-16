@@ -1,0 +1,29 @@
+.img {
+    width: 100%;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.search-container {
+    display: flex;
+}
+
+.search-input {
+    max-width: 50%;
+    margin-right: 10px;
+}
+
+.search-select {
+    min-width: 100px;
+}
+
+.search-spin {
+    margin-top: 30px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
