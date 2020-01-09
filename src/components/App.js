@@ -13,16 +13,16 @@ function App({children}) {
             <PageHeader
                 style={{
                     border: '1px solid rgb(235, 237, 240)',
+                    background: "darkgrey",
                 }}
                 title={
                     <img height="40px" src={github} alt="logo"/>
                 }
-                subTitle="simple client"
                 extra={[
-                    <Button key="3" onClick={() => history.push('/search')} shape="circle" icon="search"/>,
-                    <Button key="2" onClick={() => history.push('/my-profile')} shape="round" icon="user">My
+                    <Button key="3" onClick={() => history.push('/search')} icon="search"/>,
+                    <Button key="2" onClick={() => history.push('/my-profile')} icon="user">My
                         profile</Button>,
-                    <Button onClick={logOut} key="1" shape="round" type="primary" icon="logout">
+                    <Button onClick={logOut} key="1" type="default" icon="logout">
                         Logout
                     </Button>,
                 ]}

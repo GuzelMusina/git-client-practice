@@ -1,8 +1,14 @@
-.round-img {
-    border-radius: 50%;
+.square-img {
     max-width: 200px;
-}
+    margin-right: 10px;
 
+}
+.info-profile Col{
+    margin: 20px;
+}
+.info-profile h2 {
+font-weight: lighter;
+}
 .repositories {
     margin-top: 20px;
 }

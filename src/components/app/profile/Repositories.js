@@ -1,8 +1,8 @@
 import React from "react";
-import './profile.css';
+import './profile.scss';
 import {Card, Icon} from "antd";
 import {Link} from "react-router-dom";
-import Star from "../others/Star";
+import Star from "../repositories/Star";
 
 const Repositories = ({repositories}) => (
     <div className="repositories">
