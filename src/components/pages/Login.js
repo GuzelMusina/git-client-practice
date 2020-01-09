@@ -36,8 +36,7 @@ function Login() {
                     <img src={github} alt="" className="mb-10 img"/>
                     <Input
                         className="mb-10"
-                        prefix={<Icon type="user" style={{color: 'rgba(0,0,0,.25)'}}/>}
-                        placeholder="Token"
+                        placeholder="Please write your personal github token here"
                         value={githubToken}
                         onChange={(event) => setGithubToken(event.target.value)}
                     />
