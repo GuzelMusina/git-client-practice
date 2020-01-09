@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Button, Col, Icon, Input, Row} from "antd";
-import "./styles.css";
+import "./styles.scss";
 import github from "../github.png"
 import { useLazyQuery } from '@apollo/react-hooks';
 import {Redirect} from "react-router-dom";
@@ -42,12 +42,12 @@ function Login() {
                         onChange={(event) => setGithubToken(event.target.value)}
                     />
                     <Button
-                        type="dashed"
+                        type="default"
                         block
                         htmlType="submit"
                         onClick={login}
                     >
-                        Log in
+                        Log In
                     </Button>
                     {error &&
                     <p className="error-message">Incorrect token</p>
