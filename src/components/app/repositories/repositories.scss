@@ -3,9 +3,23 @@
 }
 
 .star-icon {
-  font-size: 15px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top:10px;
 }
 
 .repo-title {
   display: flex;
+  font-size: 15px;
+}
+.repo-title span{
+  font-size: 15px;
+  padding-top:10px;
+}
+.repos-owner {
+  max-width: 20px;
+  margin-right: 10px;
+}
+.owner{
+  padding-top: 20px;
 }

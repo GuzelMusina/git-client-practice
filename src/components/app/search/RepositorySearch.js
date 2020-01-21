@@ -10,15 +10,21 @@ query Reps($query: String!) {
         edges {
             node {
                 ... on Repository {
-                    id
-                    name
-                    viewerHasStarred
-                    url
-                    isPrivate
-                    isArchived
+                    id,
+                    name,
+                    viewerHasStarred,
+                    url,
+                    isPrivate,
+                    isArchived,
+                    
+                
                     owner {
                     login
                     avatarUrl
+                    }
+                    
+                    primaryLanguage {
+                        name
                     }
                 }
             }

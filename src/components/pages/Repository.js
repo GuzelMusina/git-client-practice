@@ -18,7 +18,11 @@ query Repos($login: String!, $name: String!) {
         }
         stargazers {
             totalCount
-        }
+        } 
+        owner {
+             login
+             avatarUrl
+                    }
         description
     }
 }`;
