@@ -16,7 +16,7 @@ function App({children}) {
                     background: "darkgrey",
                 }}
                 title={
-                    <img height="40px" src={github} alt="logo"/>
+                    <img id="github-image" height="40px" src={github} alt="logo" onClick={() => history.push('/my-profile')}/>
                 }
                 extra={[
                     <Button key="3" onClick={() => history.push('/search')} icon="search"/>,
