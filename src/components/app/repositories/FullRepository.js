@@ -17,9 +17,10 @@ function FullRepository(props) {
                 <span>{starsCount}</span>
             </div>
             <p>{repository.description}</p>
-            <div className="owner"><p>{repository.owner.login} <img className="repos-owner" src={repository.owner.avatarUrl} alt="avatar"/>
+            <div className="owner"><p>{repository.owner.login} <img className="repos-owner"
+                                                                    src={repository.owner.avatarUrl} alt="avatar"/>
             </p></div>
-              <a rel="noopener noreferrer" href={repository.url} target="_blank">Link on github</a>
+            <a rel="noopener noreferrer" href={repository.url} target="_blank">Link on github</a>
         </div>
     )
 }

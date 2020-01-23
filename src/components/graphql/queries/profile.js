@@ -1,5 +1,16 @@
 import gql from "graphql-tag";
 
+export const SHORT_PROFILE = gql`
+query UserProfile($login:String!){
+  user(login: $login) {
+    id
+    avatarUrl
+    email
+    login
+    name
+  }
+}`;
+
 export const PROFILE_QUERY = gql`
 query UserProfile($login:String!){
   user(login: $login) {
@@ -11,6 +22,7 @@ query UserProfile($login:String!){
     email
     login
     name
+    url
     repositories(first: 10) {
       edges {
         node {
@@ -41,6 +53,7 @@ query MyProfile($first:Int!){
         avatarUrl
         bio
         email   
+        url
         repositories(first: $first) {
             edges {
                 node {

@@ -3,7 +3,7 @@ import {Query} from 'react-apollo';
 import FullProfile from "../app/profile/FullProfile";
 import {useParams} from "react-router-dom";
 import {Col, Row, Spin} from "antd";
-import {PROFILE_QUERY} from "../graphql/profile";
+import {PROFILE_QUERY} from "../graphql/queries/profile";
 
 function Profile() {
     let {login} = useParams();

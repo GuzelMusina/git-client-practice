@@ -1,8 +1,8 @@
 import React from 'react';
-import '../App.css';
+import './App.css';
 import 'antd/dist/antd.css';
 import {Button, PageHeader} from "antd";
-import github from "./github.png";
+import github from "./components/image/github.png";
 import {useHistory} from "react-router-dom";
 
 function App({children}) {

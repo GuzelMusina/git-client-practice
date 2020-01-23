@@ -1,22 +1,13 @@
 import React from "react";
-import gql from "graphql-tag";
 import {Query} from 'react-apollo';
-import {Avatar, Card, Icon, Spin} from "antd";
+import {Card, Icon, Spin} from "antd";
 import {Link} from "react-router-dom";
+import {GET_USERS} from "../../graphql/queries/search";
+import ShortUserInfo from "../profile/ShortUserInfo";
 
-const {Meta} = Card;
-
-const userSearchQuery = gql`
-query User($login:String!){
-    user(login: $login) {
-        login
-        name
-        avatarUrl  
-    } 
-}`;
 
 const UserSearchResult = ({login}) => (
-    <Query query={userSearchQuery} variables={{login}}>
+    <Query query={GET_USERS} variables={{login}}>
         {
             ({data, loading}) => {
                 return (
@@ -25,13 +16,7 @@ const UserSearchResult = ({login}) => (
                         data ?
                             <Link to={`/profile/${data.user.login}`}>
                                 <Card hoverable style={{marginTop: 20}}>
-                                    <Meta
-                                        avatar={
-                                            <Avatar src={data.user.avatarUrl}/>
-                                        }
-                                        title={data.user.login}
-                                        description={data.user.name}
-                                    />
+                                    <ShortUserInfo user={data.user}/>
                                 </Card>
                             </Link> :
                             (login.length !== 0 &&
@@ -42,5 +27,4 @@ const UserSearchResult = ({login}) => (
         }
     </Query>
 );
-
 export default UserSearchResult;

@@ -1,9 +1,9 @@
 import {Icon} from "antd";
 import React from "react";
 import {Mutation} from "@apollo/react-components";
-import './repositories.scss';
+import '../scss/repositories.scss';
 
-import {STAR_REPOSITORY, REMOVE_STAR} from "../../graphql/stars";
+import {STAR_REPOSITORY, REMOVE_STAR} from "../../graphql/mutation/stars";
 
 const Star = ({id, hasStarred, stars, setStars}) => (
     <Mutation mutation={hasStarred ? REMOVE_STAR : STAR_REPOSITORY} variables={{id}}>

@@ -1,7 +1,7 @@
 import {Button} from "antd";
 import {Mutation} from "@apollo/react-components";
 import React from "react";
-import {FOLLOW_USER, UNFOLLOW_USER} from "../../graphql/follow";
+import {FOLLOW_USER, UNFOLLOW_USER} from "../../graphql/mutation/follow";
 
 const FollowUserButton = ({id, isFollowing}) => (
     <Mutation mutation={isFollowing ? UNFOLLOW_USER : FOLLOW_USER} variables={{id}}>

@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import {Button, Col, Icon, Input, Row} from "antd";
-import "./styles.scss";
-import github from "../github.png"
+import "./scss/styles.scss";
+import github from "../image/github.png"
 import { useLazyQuery } from '@apollo/react-hooks';
 import {Redirect} from "react-router-dom";
-import VALIDATION_QUERY from "../graphql/validation";
+import VALIDATION_QUERY from "../graphql/queries/validation";
 
 function Login() {
     let [githubToken, setGithubToken] = useState('');

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import {ApolloProvider} from 'react-apollo';

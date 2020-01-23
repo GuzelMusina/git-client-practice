@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Input, Select} from "antd";
-import "./styles.scss";
+import "./scss/styles.scss";
 import UserSearchResult from "../app/search/UserSearch";
 import RepositorySearch from "../app/search/RepositorySearch";
 const {Option} = Select;
