@@ -1,6 +1,10 @@
 ## Github client application
 Create a front application for github client on React with Github GraphQL API
 
+## How to see
+You can see project on this web page: 
+https://git-client-practice.herokuapp.com
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![Image alt](https://github.com/GuzelMusina/git-client-practice/raw/master/github.png)
